@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="/dist/fonts.css" rel="stylesheet">
+    <link href="/index.css" rel="stylesheet">
+    <script src="index.js"></script>
+    <script src="/dist/argon2.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <section class="bg-gray-50 dark:bg-gray-900">
+      <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
+        <a href="#" class="flex items-center mb-6 text-4xl font-semibold text-gray-900 dark:text-white font-mono">
+          hpwd
+        </a>
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <form spellcheck="false" id="f1" class="space-y-4 md:space-y-6" action="#">
+              <div>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" data-loc="sitename">Название сайта</label>
+                <input type="text" autocomplete="off" name="name" id="name" class="fmono h-12 text-lg bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="google.com" required="">
+              </div>
+              <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" data-loc="mainpassword">Основной пароль</label>
+                <input type="password" autocomplete="off" name="password" id="password" placeholder="••••••••" class="fmono h-12 text-lg bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex-col">
+                  <input value="14" type="text" id="length" class="h-12 fmono text-lg block text-center xxs:w-16 w-12 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <label for="length" class="block mt-2 text-xs font-medium text-center text-gray-900 dark:text-white" data-loc="length">Длина</label>
+                </div>
+                <div class="flex-col">
+                  <div class="inline-flex rounded-md shadow-sm h-12 text-lg" role="group">
+                    <div class="flex">
+                      <input id="ty4" type="radio" name="alphabet" value="4" class="hidden peer" checked="checked">
+                      <label for="ty4" class="px-2 xxs:px-4 py-2 font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white peer-checked:dark:bg-gray-600 dark:hover:text-white dark:focus:ring-blue-500 dark:focus:text-white fmono peer-checked:bg-gray-100">
+                        Aa1*
+                      </label>
+                    </div>
+                    <div class="flex">
+                      <input id="ty3" type="radio" name="alphabet" value="3" class="hidden peer">
+                      <label for="ty3" class="px-2 xxs:px-4 py-2 font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white peer-checked:dark:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white fmono peer-checked:bg-gray-100">
+                        Aa1
+                      </label>
+                    </div>
+                    <div class="flex">
+                      <input id="ty2" type="radio" name="alphabet" value="2" class="hidden peer">
+                      <label for="ty2" class="px-2 xxs:px-4 py-2 font-medium text-gray-900 bg-white border-l border-t border-b border-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white peer-checked:dark:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white fmono peer-checked:bg-gray-100">
+                        a1
+                      </label>
+                    </div>
+                    <div class="flex">
+                      <input id="ty1" type="radio" name="alphabet" value="1" class="hidden peer">
+                      <label for="ty1" class="px-2 xxs:px-4 py-2 font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:peer-checked:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white fmono peer-checked:bg-gray-100">
+                        1
+                      </label>
+                    </div>
+                  </div>
+                  <label class="block mt-2 text-xs font-medium text-gray-900 dark:text-white text-center" data-loc="alphabet">Символы</label>
+                </div>
+              </div>
+            </form>
+            <form spellcheck="false" class="flex items-center" id="result">   
+                <div class="relative w-full">
+                    <input readonly type="password" autocomplete="off" id="pwd-result" class="fmono bg-gray-50 border border-gray-300 text-gray-900 h-12 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                </div>
+                <button type="button" id="reveal" class="center m-auto p-2.5 aspect-square h-12 w-12 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <img src="/dist/hide.svg" class="w-5 h-5 m-auto"/> 
+                </button>
+                <button type="button" id="copy" class="center m-auto p-2.5 aspect-square h-12 w-12 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+                <img src="/dist/copy.svg" class="w-5 h-5 m-auto"/> 
+                </button>
+            </form>
+          </div>
+        </div>
+        <div class="flex ml-2 mr-2 mt-4 w-full sm:max-w-md xl:p-0">
+          <div class="flex">
+            <img id="en" class="object-cover center m-auto aspect-square h-8 w-8 ml-2 rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" src="dist/en.svg">
+            <img id="ru" class="object-cover center m-auto aspect-square h-8 w-8 ml-3 rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" src="dist/ru.svg">
+          </div>
+          <div class="flex-grow"></div>
+          <!-- <label id="tlbl" class="h-8 w-8">
+            <input type="checkbox" />
+            <div class="zswitch" id="swtheme">
+              <div></div>
+              <div></div><span></span>
+            </div>
+          </label> -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
